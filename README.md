@@ -76,7 +76,7 @@ gcc linked_list.c -o linked_list
 
 ## 🚀 Future Enhancements
 I plan to add:
-More advanced data structures (trees, graphs)
-Documentation and example input/output for each program
-Makefile support for easier compilation
-Unit tests for key modules
+- More advanced data structures (trees, graphs)
+- Documentation and example input/output for each program
+- Makefile support for easier compilation
+- Unit tests for key modules
