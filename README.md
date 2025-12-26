@@ -31,8 +31,6 @@ This folder contains C programs that implement common data structures from scrat
 - **Binary Tree / BST** *(if applicable)*  
   — Insert, search, and traversal algorithms.
 
-> *Add specific file names here (e.g., `linked_list.c`, `stack_array.c`) along with short explanations.*
-
 ---
 
 ## 📚 Practice
@@ -49,8 +47,6 @@ This folder contains various C programs written as exercises or practice problem
   Programs working with arrays, string manipulation, sorting, searching.
 - **Recursion**  
   Recursive solutions for factorial, Fibonacci, and more.
-
-> *List specific file names (e.g., `factorial.c`, `string_reverse.c`) with one‑line descriptions.*
 
 ---
 
