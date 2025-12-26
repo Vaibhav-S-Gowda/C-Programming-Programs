@@ -84,7 +84,7 @@ void DFS(TreeNode root) {
     if (root == NULL) return;
     printf("%d", root->data);
     DFS(root->left);
-    DFS(root->rght);
+    DFS(root->right);
 }
 
 // Main function
