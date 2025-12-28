@@ -61,3 +61,36 @@ int main() {
     freeGraph(graph);
     return 0;
 }
+
+
+/*  
+    | Field              | Meaning                                               |
+    | ------------------ | ----------------------------------------------------- |
+    |  int numVertices;  | Number of vertices in the graph                       |
+    |  int **adjMatrix;  | A pointer to a 2-D array used as the adjacency matrix |
+*/
+
+
+/*
+    ┌─────────────┐      malloc(sizeof(*graph))
+    │ Graph struct│  =>  stores numVertices + adjMatrix pointer
+    └─────────────┘
+*/
+
+/*
+    adjMatrix
+    ┌─────┬─────┬─────┬─────┐
+    │ *0  │ *1  │ *2  │ *3  │   -> pointers to rows
+    └─────┴─────┴─────┴─────┘
+*/
+
+/*
+    Graph (pointer) ─────➤ struct in heap
+                          ├── numVertices = 4
+                          └── adjMatrix ─────➤ malloc rows pointer table
+                                                 ├─ row0 pointer ─────▶ [0 0 0 0]
+                                                 ├─ row1 pointer ─────▶ [0 0 0 0]
+                                                 ├─ row2 pointer ─────▶ [0 0 0 0]
+                                                 └─ row3 pointer ─────▶ [0 0 0 0]
+
+*/
