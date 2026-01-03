@@ -55,3 +55,5 @@ int main() {
            validUtf8(data2, size2) ? "Valid UTF-8" : "Invalid UTF-8");
     return 0;
 }
+
+// sizeof(array) / sizeof(array[0]) safely computes array length.
