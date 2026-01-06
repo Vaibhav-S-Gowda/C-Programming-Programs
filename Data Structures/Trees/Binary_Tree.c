@@ -1,73 +1,78 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-#define MAX 100
+/* ---------- DEFINE TREE NODE ---------- */
+typedef struct Node {
+    int data;
+    struct Node *left;
+    struct Node *right;
+} *TreeNode;
 
-// Insert a value into the binary tree array
-void insert(int tree[], int *size, int value) {
-    if (*size >= MAX) {
-        printf("Tree overflow! Cannot insert.\n");
-        return;
+/* ---------- CREATE NODE ---------- */
+TreeNode createNode(int value) {
+    TreeNode newNode = (TreeNode)malloc(sizeof(struct Node));
+    if (!newNode) {
+        printf("Memory error!\n");
+        return NULL;
     }
-    tree[(*size)++] = value;
+    newNode->data = value;
+    newNode->left = newNode->right = NULL;
+    return newNode;
 }
 
-// Display the tree in level order
-void display(int tree[], int size) {
-    if (size == 0) {
-        printf("Tree is empty!\n");
-        return;
+/* ---------- INSERT NODE (LEVEL ORDER) ---------- */
+TreeNode insert(TreeNode ROOT, int value) {
+    TreeNode newNode = createNode(value);
+    if (ROOT == NULL)
+        return newNode;
+
+    TreeNode queue[100];
+    int front = 0, rear = 0;
+
+    queue[rear++] = ROOT;
+
+    while (front < rear) {
+        TreeNode temp = queue[front++];
+
+        if (temp->left == NULL) {
+            temp->left = newNode;
+            return ROOT;
+        } else {
+            queue[rear++] = temp->left;
+        }
+
+        if (temp->right == NULL) {
+            temp->right = newNode;
+            return ROOT;
+        } else {
+            queue[rear++] = temp->right;
+        }
     }
-    printf("Binary Tree (Level Order): ");
-    for (int i = 0; i < size; i++)
-        printf("%d ", tree[i]);
-    printf("\n");
+    return ROOT;
 }
 
-// Utility Functions to find relations
-int parent(int index)     { return (index - 1) / 2; }
-int leftChild(int index)  { return 2 * index + 1; }
-int rightChild(int index) { return 2 * index + 2; }
-
-// Display Node Relationship
-void displayNodeRelations(int tree[], int size, int index) {
-    if (index < 0 || index >= size) {
-        printf("Invalid index!\n");
+/* ---------- DFS (INORDER) ---------- */
+void dfs(TreeNode root) {
+    if (root == NULL)
         return;
-    }
 
-    printf("\nNode at index %d: %d\n", index, tree[index]);
-
-    // Parent
-    if (index > 0)
-        printf(" Parent: %d\n", tree[parent(index)]);
-
-    // Left Child
-    if (leftChild(index) < size)
-        printf(" Left Child: %d\n", tree[leftChild(index)]);
-
-    // Right Child
-    if (rightChild(index) < size)
-        printf(" Right Child: %d\n", tree[rightChild(index)]);
+    dfs(root->left);          // Left
+    printf("%d ", root->data); // Root
+    dfs(root->right);         // Right
 }
 
-// Driver Code
+/* ---------- MAIN FUNCTION ---------- */
 int main() {
-    int tree[MAX];
-    int size = 0;
+    TreeNode ROOT = NULL;
 
-    // Insert sample nodes
-    insert(tree, &size, 10);
-    insert(tree, &size, 20);
-    insert(tree, &size, 30);
-    insert(tree, &size, 40);
-    insert(tree, &size, 50);
-    insert(tree, &size, 60);
+    ROOT = insert(ROOT, 10);
+    ROOT = insert(ROOT, 20);
+    ROOT = insert(ROOT, 30);
+    ROOT = insert(ROOT, 40);
+    ROOT = insert(ROOT, 50);
 
-    // Display tree
-    display(tree, size);
-
-    // Display relationships of index 1 (value 20)
-    displayNodeRelations(tree, size, 1);
+    printf("DFS (Inorder Traversal): ");
+    dfs(ROOT);
 
     return 0;
 }
