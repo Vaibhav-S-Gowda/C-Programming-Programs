@@ -149,3 +149,23 @@ int main(void) {
     Load Factor: Ratio of elements to table size, affects performance
 */
 
+/*
+
+    Hash Functions
+        • Division: h(k) = k mod m
+        • Multiplication: h(k) = ⌊m(kA mod 1)⌋
+        • Universal hashing: Randomized functions
+        • Cryptographic: MD5, SHA for security
+
+*/
+
+
+/*
+
+    Collision Resolution
+        • Chaining: Linked lists at each index
+        • Linear Probing: Check next available slot
+        • Quadratic Probing: Check slots at quadratic intervals
+        • Double Hashing: Use second hash function
+        
+*/
