@@ -5,7 +5,7 @@ int main() {
     int age;
     float gpa;
     char grade;
-    char name[30];
+    char name[40];
     
     printf("Enter your age: ");
     scanf("%d", &age);
