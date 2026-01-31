@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <limits.h>
 
-// Function to count elements with strictly smaller and greater elements
 int countElements(int* nums, int numsSize) {
     // If there are fewer than 3 elements, it's impossible to satisfy the condition
     if (numsSize < 3) return 0;
