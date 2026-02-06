@@ -21,7 +21,8 @@ int evaluatePostfix(char postfix[]);
 
 int main() {
     printf("Enter the infix expression: ");
-    gets(infix);
+    fgets(infix, MAX, stdin);
+    infix[strcspn(infix, "\n")] = 0;
 
     inToPost();
     print();
