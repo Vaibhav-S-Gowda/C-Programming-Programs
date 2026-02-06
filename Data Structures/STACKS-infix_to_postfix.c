@@ -106,7 +106,6 @@ void push(char c) {
 }
 
 char pop() {
-    char c;
     if(top == -1) {
         printf("Stack Underflow\n");
         exit(1);
