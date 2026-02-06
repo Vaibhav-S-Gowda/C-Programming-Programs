@@ -132,36 +132,36 @@ int main(void){
             scanf("%d",&num1);
         }
         
-    switch (choice){
-        case 1:
-            h = Insert_Front(h, num1);
-            printf("Element inserted\n");
-            break;
-        case 2:
-            h = Insert_Rear(h, num1);
-            printf("Element inserted\n");
-            break;
-        case 3:
-            h = Delete_Front(h);
-            printf("Element deleted\n");
-            break;
-        case 4:
-            h = Delete_Rear(h);
-            printf("Element deleted\n");
-            break;
-        case 5:
-            Count_Nodes(h);
-            break;
-        case 6:
-            display(h);
-            break;
-        case 0:
-            printf("Exit\n");
-            break;
-        default:
-            printf("Invalid Choice\n");
-            break;
-    }
+        switch (choice){
+            case 1:
+                h = Insert_Front(h, num1);
+                printf("Element inserted\n");
+                break;
+            case 2:
+                h = Insert_Rear(h, num1);
+                printf("Element inserted\n");
+                break;
+            case 3:
+                h = Delete_Front(h);
+                printf("Element deleted\n");
+                break;
+            case 4:
+                h = Delete_Rear(h);
+                printf("Element deleted\n");
+                break;
+            case 5:
+                Count_Nodes(h);
+                break;
+            case 6:
+                display(h);
+                break;
+            case 0:
+                printf("Exit\n");
+                break;
+            default:
+                printf("Invalid Choice\n");
+                break;
+        }
     }
     return 0;
 }
