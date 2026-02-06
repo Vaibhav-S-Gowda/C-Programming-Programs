@@ -1,13 +1,14 @@
 #include<stdio.h>
-int main()
-{
-    int a = 10;
-    int* b = &a;
-    printf("%a",a);
-    printf("\n%a",b);
-    printf("\nHello World");
-    printf(" ° \n");
-    printf("  ° ○ ╣█    É╤Ä    █╠○ °  \n");
-    printf("  ├ »   ♣ « W ♥ ♥ ◙ • ± ☼\n");
+#include<string.h>
+
+struct school{  //Declaration
+    char section;
+    int rollNum;
+    char name[50]; 
+}s1 = {'A',23,"Hinduja"};
+
+int main(){
+
+    printf("%c %d %s",s1.section,s1.rollNum,s1.name);
     return 0;
 }
