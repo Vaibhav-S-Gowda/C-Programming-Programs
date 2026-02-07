@@ -66,13 +66,13 @@ NODE deleteRear(NODE front) {
         temp = temp->link;
     }
 
-    if (prev == NULL) {
-        printf("\nDeleted from rear: %d\n", temp->data);
+    printf("\nDeleted from rear: %d\n", temp->data);
+
+    if (prev == NULL) {  // single node
         free(temp);
         return NULL;
     }
 
-    printf("\nDeleted from rear: %d\n", temp->data);
     prev->link = NULL;
     free(temp);
     return front;
