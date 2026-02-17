@@ -69,3 +69,42 @@ int main() {
 
     return 0;
 }
+
+/*
+=============================================================
+Program: Singly Linked List Creation and Reversal
+
+Description:
+This program demonstrates basic operations on a singly linked
+list using dynamic memory allocation in C.
+
+The program performs the following operations:
+1. Creates nodes dynamically using malloc.
+2. Inserts elements at the end of the linked list.
+3. Displays the linked list elements.
+4. Reverses the linked list using an iterative approach.
+5. Displays the reversed linked list.
+
+Data Structure Used:
+- Singly Linked List
+- Each node contains:
+    -> data  : stores integer value
+    -> link  : pointer to next node
+
+Reversal Logic:
+The reversal is done using three pointers:
+- prev : stores previous node
+- curr : stores current node
+- next : stores next node temporarily
+
+Time Complexity:
+- Insertion at End : O(n)
+- Display          : O(n)
+- Reverse List     : O(n)
+
+Space Complexity:
+- O(1) (No extra memory used except pointer variables)
+
+Author: <Your Name>
+=============================================================
+*/
