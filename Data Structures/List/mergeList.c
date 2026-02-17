@@ -91,3 +91,34 @@ int main() {
 
     return 0;
 }
+
+/*
+    Algorithm Design Pattern Used
+        Two Pointer Technique
+        +
+        Dummy Node Pattern
+*/
+
+/*
+
+    Merge Logic:
+        Create dummy node
+        tail = dummy
+
+        While list1 AND list2 exist
+            Compare values
+            Attach smaller node to tail
+            Move pointer
+            Move tail
+
+        Attach remaining nodes
+
+        Return dummy->next
+
+*/
+
+/*
+    Time Complexity:
+        Time → O(n + m)
+        Space → O(1)
+*/
