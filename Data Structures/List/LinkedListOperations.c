@@ -7,7 +7,7 @@ typedef struct mynode{
 }*NODE;
 
 NODE Create_Node(int data){
-    NODE newNode = malloc(sizeof(NODE));
+    NODE newNode = malloc(sizeof(struct mynode));
     if(newNode == NULL){
         printf("Memory is not allocated!!");
         exit(1);
@@ -140,3 +140,34 @@ int main(){
     Display_Node(node);
     return 0;
 }
+
+/*
+
+    | Operation       | Time Complexity |
+    | --------------- | --------------- |
+    | Create Node     | O(1)            |
+    | Insert Front    | O(1)            |
+    | Insert Rear     | O(n)            |
+    | Insert Position | O(n)            |
+    | Display         | O(n)            |
+    | Delete Front    | O(1)            |
+    | Delete Rear     | O(n)            |
+
+*/
+
+
+/*
+    Output:
+
+    -----Linked List Opertions-----
+    Insert at Front Operations 
+    6 -> 11 -> 32 -> 28 -> 68
+    Insert at Rear Operations 
+    6 -> 11 -> 32 -> 28 -> 68 -> 50 -> 60
+    Insert at Position Operations 
+    100 -> 6 -> 11 -> 32 -> 28 -> 15 -> 68 -> 5 -> 50 -> 60
+    Delete at Front Operations 
+    11 -> 32 -> 28 -> 15 -> 68 -> 5 -> 50 -> 60
+    Delete at Rear Operations 
+    11 -> 32 -> 28 -> 15 -> 68 -> 5
+*/
