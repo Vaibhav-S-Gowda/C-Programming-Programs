@@ -115,3 +115,41 @@ int main(){
     
     return 0;
 }
+
+/*
+    | Operation      | Time                   |
+    | -------------- | ---------------------- |
+    | Create Node    | O(1)                   |
+    | Insert Node    | O(n)                   |
+    | Display        | O(n)                   |
+    | Add Polynomial | O((n+m)²) current code |
+    | Optimized Add  | O(n+m)                 |
+*/
+
+
+/*
+    Algorithm : Insert Term into Polynomial (Sorted Order)
+
+    Step 1: Create new node with given coefficient and power
+
+    Step 2: If list is empty OR new power is greater than head power
+    → Insert node at beginning
+    → Return new head
+
+    Step 3: Set temp = head
+
+    Step 4: Traverse list until:
+
+    temp power becomes less than or equal to new power
+
+    OR list ends
+
+    Step 5: If node with same power exists
+    → Add coefficients
+    → Delete new node
+    → Return head
+
+    Step 6: Otherwise insert new node between prev and temp
+
+    Step 7: Return head
+*/
