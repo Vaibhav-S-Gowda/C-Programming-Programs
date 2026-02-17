@@ -118,6 +118,25 @@ int main() {
 */
 
 /*
+    Execution Flow Diagram (Textual):
+        Start
+        ↓
+        Create List1
+        ↓
+        Create List2
+        ↓
+        Display List1
+        ↓
+        Display List2
+        ↓
+        Merge Lists
+        ↓
+        Display Result
+        ↓
+        End
+*/
+
+/*
     Time Complexity:
         Time → O(n + m)
         Space → O(1)
