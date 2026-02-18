@@ -163,3 +163,15 @@ int main(void) {
     }
     return 0;
 }
+
+/*
+| Operation         | Time Complexity | Space Complexity | Notes                                            |
+| ----------------- | --------------- | ---------------- | ------------------------------------------------ |
+| Insert Front      | O(1)            | O(1)             | Direct pointer updates, no traversal             |
+| Insert Rear       | O(1)            | O(1)             | Uses tail (head->Llink) for constant time insert |
+| Delete Front      | O(1)            | O(1)             | Adjusts first node pointers only                 |
+| Delete Rear       | O(1)            | O(1)             | Uses tail pointer for constant time delete       |
+| Display (Forward) | O(N)            | O(1)             | Traverses entire list once                       |
+| Display (Reverse) | O(N)            | O(1)             | Traverses using left links                       |
+| Search            | O(N)            | O(1)             | Linear search through nodes                      |
+*/
