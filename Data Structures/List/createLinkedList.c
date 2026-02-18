@@ -68,3 +68,18 @@ int main(){
     Display(head);
     return 0;
 }
+
+/*
+| Operation    | Time Complexity | Space Complexity | Notes                           |
+| ------------ | --------------- | ---------------- | ------------------------------- |
+| Create Node  | O(1)            | O(1)             | Single memory allocation        |
+| Insert Front | O(1)            | O(1)             | Direct pointer reassignment     |
+| Insert Rear  | O(N)            | O(1)             | Requires traversal to last node |
+| Display      | O(N)            | O(1)             | Traverses full list             |
+
+Overall Storage: O(N) — One node allocated per element
+Structure Type: Singly Linked List
+Key Advantage: Simple structure with dynamic memory usage
+Limitation: Rear insertion requires full traversal (no tail pointer)
+Best Use Case: Stack-like operations or applications where front insertion is frequent.
+*/
