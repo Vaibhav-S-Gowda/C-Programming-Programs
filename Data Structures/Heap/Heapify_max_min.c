@@ -125,3 +125,62 @@ int main() {
 
     return 0;
 }
+
+/*
+Technical Notes:
+
+Time Complexity:
+- Insert Operation:
+  upheapify → O(log N)
+  Reason: Moves up the heap height.
+
+- Build Max Heap:
+  buildMaxHeap → O(N)
+  Reason: Bottom-up heap construction is linear time.
+
+- Downheapify:
+  O(log N)
+  Reason: Traverses height of heap.
+
+- Heap Sort:
+  Build Heap → O(N)
+  Extraction Phase → O(N log N)
+  Overall Heap Sort → O(N log N)
+
+Space Complexity:
+- Heap Storage (Array): O(N)
+- Recursion Stack (downheapify worst case): O(log N)
+
+Overall Space Complexity: O(N)
+
+Performance Characteristics:
+- Guaranteed O(N log N) sorting performance.
+- In-place sorting (no extra array required).
+- Cache-friendly due to contiguous memory storage.
+
+Algorithm Characteristics:
+- Max Heap ensures largest element at root.
+- Complete Binary Tree structure.
+- Supports priority queue style operations.
+
+Reliability Considerations:
+- No overflow check for MAX limit.
+- No input validation for negative size or invalid input.
+- Recursive downheapify may risk stack growth for very large heaps.
+
+Limitations:
+- Fixed maximum heap size (MAX = 100).
+- No dynamic memory allocation.
+- No heap underflow or overflow handling.
+
+Possible Optimizations:
+- Convert recursive downheapify to iterative.
+- Add boundary checks for safe insert operations.
+- Implement dynamic resizing using malloc/realloc.
+
+Typical Use Cases:
+- Priority Queue implementation.
+- Scheduling systems (CPU scheduling, task scheduling).
+- Real-time ranking systems.
+- Large dataset sorting where memory overhead must be minimal.
+*/
