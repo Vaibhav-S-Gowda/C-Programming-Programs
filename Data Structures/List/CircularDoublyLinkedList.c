@@ -230,3 +230,22 @@ int main() {
 
     return 0;
 }
+
+/*
+| Operation          | Time Complexity | Space Complexity | Notes                                     |
+| ------------------ | --------------- | ---------------- | ----------------------------------------- |
+| Insert Front       | O(1)            | O(1)             | Uses head and tail pointers, no traversal |
+| Insert Rear        | O(1)            | O(1)             | Tail accessed via head->Llink             |
+| Delete Front       | O(1)            | O(1)             | Direct pointer reassignment               |
+| Delete Rear        | O(1)            | O(1)             | Uses second-last node via tail pointer    |
+| Display Forward    | O(N)            | O(1)             | Traverses list once using Rlink           |
+| Display Backward   | O(N)            | O(1)             | Traverses list once using Llink           |
+| Reverse List       | O(N)            | O(1)             | Swaps links for each node once            |
+| Sort (Bubble Sort) | O(N²)           | O(1)             | Data swapping, multiple passes            |
+
+Overall Storage: O(N) — One node allocated per element
+Structure Type: Circular Doubly Linked List
+Key Advantage: Constant-time insertion and deletion at both ends
+Limitation: Sorting is inefficient for large datasets (quadratic time)
+Best Use Case: Queue/Deque style operations with bidirectional traversal and frequent end updates.
+*/
