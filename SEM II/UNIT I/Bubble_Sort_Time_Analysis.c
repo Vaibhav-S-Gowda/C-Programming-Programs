@@ -38,7 +38,7 @@ int main() {
         bubble_sort(a, n);
         end = clock();
         time_taken = (double)(end - start) / CLOCKS_PER_SEC;
-        theoretical_time = (double);
+        theoretical_time = (double)(end + start);
     }
     
 }
