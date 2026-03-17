@@ -11,13 +11,16 @@ void generate_random(int a[], int n) {
 /*------------------ Bubble Sort ------------------*/
 void bubble_sort(int a[], int n) {
     int temp;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = i; i < n; i++)
-        {
-            /* code */
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            
+            if (a[j] > a[j + 1]) {
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
         }
-        
     }
 }
 
@@ -29,16 +32,25 @@ int main() {
     FILE *fp;
 
     srand(time(NULL));
-    fp = fopen("Bubble_Time.txt","w");
+    fp = fopen("Bubble_Time.txt", "w");
 
-    for (int n = 100; n <= 10000; n += 100)
-    {
+    for (int n = 100; n <= 10000; n += 100) {
         generate_random(a, n);
+
         start = clock();
         bubble_sort(a, n);
         end = clock();
+
         time_taken = (double)(end - start) / CLOCKS_PER_SEC;
-        theoretical_time = (double)(end + start);
+
+        // Theoretical O(n^2)
+        theoretical_time = (double)n * n;
+
+        fprintf(fp, "%d\t%lf\t%lf\n", n, time_taken, theoretical_time);
+        // fprintf(fp, "n actual theoretical\n");
+        // fprintf(fp, "%d %lf %lf\n", n, time_taken, theoretical_time);
     }
-    
+
+    fclose(fp);
+    return 0;
 }
