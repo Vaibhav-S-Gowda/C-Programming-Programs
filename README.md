@@ -13,16 +13,26 @@ This repository is a curated collection of C programs designed to master low-lev
 
 ---
 
-## 📁 Repository Map
+## 🗺️ Repository Map
+This diagram shows how the project is organized. It updates automatically as I add more modules.
 
-| Category | Icon | Description |
-| :--- | :---: | :--- |
-| [Data Structures](./Data%20Structures) | 🧠 | Implementation of core structures from scratch. |
-| [Practice](./Practice) | 🛠️ | Fundamentals, loops, and syntax drills. |
-| [LeetCode](./LeetCode) | 🏆 | Optimized algorithmic problem solving. |
-| [Mini Programs](./Mini%20Programs) | 🧪 | Logic simulations and utility tools. |
-| [New](./New) | ✨ | Latest experiments and fresh code. |
-
+```mermaid
+graph TD
+    Root((C-Programming-Programs)) --> DS[Data Structures]
+    Root --> LC[Leet Code]
+    Root --> MP[Mini Programs]
+    Root --> PR[Practice]
+    Root --> SEM[SEM II / UNIT I]
+    
+    DS --> LL[Linked Lists]
+    DS --> ST[Stacks/Queues]
+    LC --> AR[Array Problems]
+    LC --> ST2[String Manipulation]
+    
+    style Root fill:#f96,stroke:#333,stroke-width:4px
+    style DS fill:#1f6feb,color:#fff
+    style LC fill:#238636,color:#fff
+```
 ---
 
 ## 🧠 Data Structures Implementation
