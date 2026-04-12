@@ -23,6 +23,7 @@ graph TD
     Root --> MP[Mini Programs]
     Root --> PR[Practice]
     Root --> SEM[SEM II / UNIT I]
+    Root --> G[Leet Code 2]
     
     DS --> LL[Linked Lists]
     DS --> ST[Stacks/Queues]
