@@ -6,46 +6,38 @@ typedef struct {
     int r, c, rem, steps;
 } Node;
 
-/**
- * Solves LeetCode 1293: Shortest Path in a Grid with Obstacles Elimination.
- * Uses BFS with an optimized 2D visited array tracking maximum 'k' remaining.
- */
 int shortestPath(int** grid, int gridSize, int* gridColSize, int k) {
     int m = gridSize;
     int n = gridColSize[0];
 
-    // 1. Instant Exit: 1x1 grid
+    // 1. Edge Case: Already at destination
     if (m == 1 && n == 1) return 0;
 
-    // 2. Global Shortcut: If k is enough to take any Manhattan path
+    // 2. Global Shortcut: If k allows a direct Manhattan path from start to end
     if (k >= (m + n - 2)) return m + n - 2;
 
-    // 3. Optimized Visited Array: Store the max 'rem' found for each (r, c)
-    // Initialize with -1 (unvisited)
-    int* max_rem_at = (int*)malloc(m * n * sizeof(int));
-    for (int i = 0; i < m * n; i++) max_rem_at[i] = -1;
+    // 3. Visited Array: Stores the max 'rem' seen for each cell
+    int* max_rem = (int*)malloc(m * n * sizeof(int));
+    for (int i = 0; i < m * n; i++) max_rem[i] = -1;
 
-    // 4. Queue Setup: Circular buffer
-    // Max states to explore is roughly m*n, but we use a safe buffer
-    int q_capacity = m * n * (k + 1);
-    Node* queue = (Node*)malloc(q_capacity * sizeof(Node));
+    // 4. Queue Setup
+    int q_cap = m * n * (k + 1);
+    Node* q = (Node*)malloc(q_cap * sizeof(Node));
     int head = 0, tail = 0;
 
-    // Initial State
-    queue[tail++] = (Node){0, 0, k, 0};
-    max_rem_at[0] = k;
+    q[tail++] = (Node){0, 0, k, 0};
+    max_rem[0] = k;
 
-    const int dr[] = {-1, 1, 0, 0};
-    const int dc[] = {0, 0, -1, 1};
+    int dr[] = {-1, 1, 0, 0};
+    int dc[] = {0, 0, -1, 1};
 
     while (head < tail) {
-        Node cur = queue[head++];
-        
-        // Per-cell Manhattan Shortcut: Can we go straight to the end?
-        int dist_to_end = (m - 1 - cur.r) + (n - 1 - cur.c);
-        if (cur.rem >= dist_to_end) {
-            int result = cur.steps + dist_to_end;
-            free(max_rem_at); free(queue);
+        Node cur = q[head++];
+
+        // 5. Destination Check: BFS guarantees the first time we hit this, it's the shortest
+        if (cur.r == m - 1 && cur.c == n - 1) {
+            int result = cur.steps;
+            free(max_rem); free(q);
             return result;
         }
 
@@ -53,22 +45,21 @@ int shortestPath(int** grid, int gridSize, int* gridColSize, int k) {
             int nr = cur.r + dr[i];
             int nc = cur.c + dc[i];
 
-            // Bounds Check
-            if (nr < 0 || nr >= m || nc < 0 || nc >= n) continue;
+            if (nr >= 0 && nr < m && nc >= 0 && nc < n) {
+                int nrem = cur.rem - grid[nr][nc];
 
-            int nrem = cur.rem - grid[nr][nc];
-
-            // Pruning: Only proceed if we have removals left AND this path 
-            // is "better" (more removals left) than any previous path to this cell.
-            if (nrem >= 0 && max_rem_at[nr * n + nc] < nrem) {
-                max_rem_at[nr * n + nc] = nrem;
-                queue[tail++] = (Node){nr, nc, nrem, cur.steps + 1};
+                // 6. Pruning: Only explore if we have removals left AND 
+                // this path provides more removals than previously seen for this cell
+                if (nrem >= 0 && max_rem[nr * n + nc] < nrem) {
+                    max_rem[nr * n + nc] = nrem;
+                    q[tail++] = (Node){nr, nc, nrem, cur.steps + 1};
+                }
             }
         }
     }
 
-    free(max_rem_at);
-    free(queue);
+    free(max_rem);
+    free(q);
     return -1;
 }
 
