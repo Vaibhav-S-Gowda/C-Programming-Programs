@@ -1,11 +1,11 @@
-# 🕹️ C-Core: Low-Level Engineering Lab
+# C-Core: Low-Level Engineering Lab
 > **Mastering Memory, Pointers, and Algorithmic Efficiency in Pure C.**
 
 This repository is a curated collection of C programs designed to master low-level programming. From basic syntax to manual memory management, every file represents a step toward becoming a proficient C developer.
 
 ---
 
-## 🎯 The Mission
+## The Mission
 * **Zero to Hero:** Moving from simple `printf` statements to complex pointer arithmetic.
 * **Manual Control:** Mastering `malloc`, `free`, and the heap.
 * **Efficiency:** Optimizing LeetCode solutions for speed and minimal memory footprint.
@@ -13,7 +13,7 @@ This repository is a curated collection of C programs designed to master low-lev
 
 ---
 
-## 🗺️ Repository Map
+## Repository Map
 This diagram shows how the project is organized. It updates automatically as I add more modules.
 
 ```mermaid
@@ -36,7 +36,7 @@ graph TD
 ```
 ---
 
-## 🧠 Data Structures Implementation
+## Data Structures Implementation
 
 I focus on building these from the ground up without external libraries to understand exactly how memory behaves.
 
@@ -52,7 +52,7 @@ I focus on building these from the ground up without external libraries to under
 
 ---
 
-## 💻 Technical Highlights
+## Technical Highlights
 
 * **Memory Safety:** Constant focus on preventing memory leaks.
 * **Complexity Analysis:** Every algorithm is considered for its $O(n)$ performance.
@@ -60,7 +60,7 @@ I focus on building these from the ground up without external libraries to under
 
 ---
 
-## 🎯 Purpose
+## Purpose
 
 The primary goals of this repository are to:
 * **Strengthen** core C programming fundamentals.
@@ -70,7 +70,7 @@ The primary goals of this repository are to:
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 | Folder | Description |
 | :--- | :--- |
@@ -82,7 +82,7 @@ The primary goals of this repository are to:
 
 ---
 
-## 🧠 Data Structures
+## Data Structures
 
 This folder focuses on manual implementation using pointers and dynamic memory allocation (`malloc`, `free`).
 
@@ -103,7 +103,7 @@ This folder focuses on manual implementation using pointers and dynamic memory a
 
 ---
 
-## 💻 LeetCode & Algorithms
+## LeetCode & Algorithms
 
 Focuses on solving competitive programming problems with an emphasis on:
 * **Logic building** and algorithmic efficiency.
@@ -134,7 +134,7 @@ gcc linked_list.c -o linked_list
 ./linked_list
 ```
 
-## 🚀 Future Enhancements
+## Future Enhancements
 I plan to add:
 - Documentation and example input/output for each program
 - Makefile support for easier compilation
