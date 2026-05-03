@@ -23,7 +23,6 @@ graph TD
     Root --> MP[Mini Programs]
     Root --> PR[Practice]
     Root --> SEM[SEM II / UNIT I]
-    Root --> G[Leet Code 2]
     
     DS --> LL[Linked Lists]
     DS --> ST[Stacks/Queues]
@@ -78,7 +77,6 @@ The primary goals of this repository are to:
 | **`Practice/`** | Basic programs, syntax exercises, and concept practice. |
 | **`LeetCode/`** | Solutions to LeetCode problems implemented in C. |
 | **`Mini Programs/`** | Small standalone utilities, logic puzzles, and simulations. |
-| **`New/`** | Recently added programs and experimental logic. |
 
 ---
 
