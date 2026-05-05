@@ -94,8 +94,6 @@ int** combinationSum(
     return result;
 }
 
-/* ------------------- MAIN FUNCTION ------------------- */
-
 int main() {
     int candidates[] = {2, 3, 6, 7};
     int candidatesSize = 4;
